@@ -95,7 +95,52 @@ text-align: center;
 
 .wrapper > button {
  margin-right: 5px;
- padding: 5px;
- background-color: rgb(139, 0, 116);
- color: white;
+}
+
+.reply::before {
+ font-family: "Font Awesome 5 Free"; 
+ font-weight: 900; 
+ content: "\f075";
+ display: inline-block;
+ font-style: normal;
+ font-variant: normal;
+ text-rendering: auto;
+ -webkit-font-smoothing: antialiased;
+ cursor: pointer;
+}
+
+.likeComment::before {
+ font-family: "Font Awesome 5 Free"; 
+ font-weight: 900; 
+ content: "\f004";
+ display: inline-block;
+ font-style: normal;
+ font-variant: normal;
+ text-rendering: auto;
+ -webkit-font-smoothing: antialiased;
+ cursor: pointer;
+}
+
+.deleteComment::before {
+ font-family: "Font Awesome 5 Free"; 
+ font-weight: 900; 
+ content: "\f2ed";
+ display: inline-block;
+ font-style: normal;
+ font-variant: normal;
+ text-rendering: auto;
+ -webkit-font-smoothing: antialiased;
+ cursor: pointer;
+}
+
+.editComment::before {
+ font-family: "Font Awesome 5 Free"; 
+ font-weight: 900; 
+ content: "\f303";
+ display: inline-block;
+ font-style: normal;
+ font-variant: normal;
+ text-rendering: auto;
+ -webkit-font-smoothing: antialiased;
+ cursor: pointer;
 }
