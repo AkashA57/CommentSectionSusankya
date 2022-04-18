@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="myCode.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css">
+ <title>Comment Module</title>
+</head>
+<body>
+  <div class="container">
+   <div class="author">
+    <div class="profile-img" id="profile_img">
+     <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" /> 
+    </div>
+    <div class="author-info">
+     <strong id="name">
+      Akash Acharya
+     </strong>
+     <small id="date">
+      Oct 08, 2020
+     </small>
+    </div>
+   </div>
+   <div class="commentTextArea">
+    <textarea  placeholder="Enter comment here" id="comment"></textarea>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+    <script>
+     $('#textarea').emojioneArea({
+     pickerPosition: 'bottom'
+     });
+    </script> -->
+   </div>
+   <div class="addCommentButton">
+    <button class="btn btn-primary" id="addComments">Add</button>
+   </div>
+   
+   <div id="allComments"></div>
+ </div>
+
+<script src="index.js"></script>
+</body>
+</html>
