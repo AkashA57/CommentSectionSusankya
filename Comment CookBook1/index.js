@@ -31,6 +31,7 @@ function addComment(ev) {
  author.appendChild(authorImage);
  author.appendChild(authorInfo);
  const textBox = document.createElement('div');
+ textBox.className = 'textComment';
  const replyButton = document.createElement('button');
  replyButton.className = 'reply';
  replyButton.innerHTML = 'Reply';
@@ -53,10 +54,11 @@ function addComment(ev) {
      textBox.innerHTML = commentText;
      textBox.style.backgroundColor = "aliceblue";
      wrapDiv.append(author, textBox, replyButton, likeButton, deleteButton, editButton);
+     wrapDiv.style.bottomPadding = "50px";
      commentContainer.appendChild(wrapDiv);
  } else {
      wrapDiv = ev.target.parentElement;
-     // wrapDiv.style.boxShadow = "10px 20px 30px blue";
+     wrapDiv.style.boxShadow = "-5px -5px 30px 5px silver, 5px 5px 30px 5px black";
      commentText = ev.target.parentElement.firstElementChild.value;
      textBox.innerHTML = commentText;
      textBox.style.backgroundColor = "cornsilk";
@@ -102,6 +104,21 @@ document.getElementById('allComments').addEventListener('click', function (e) {
       const likeBtnValue = e.target.innerHTML;
       e.target.innerHTML = likeBtnValue !== 'Like' ? Number.parseInt(likeBtnValue) + 1 : 1;
      setOnLocalStorage();
+ } else if(hasClass(e.target, 'editComment')) {
+     if(e.target.parentElement.querySelector(".editPlatform")!=null) {
+      const textComment = e.target.parentElement.querySelector(".editPlatform").value;
+      e.target.parentElement.querySelector(".textComment").innerText = textComment;
+      e.target.parentElement.querySelector(".editPlatform").remove();
+     } 
+     else {
+     const textComment = e.target.parentElement.querySelector(".textComment");
+     console.log(textComment);
+     const editPlatform = document.createElement('textarea');
+     editPlatform.className = 'editPlatform';
+     editPlatform.value = textComment.innerText;
+     textComment.innerText = "";
+     textComment.appendChild(editPlatform);
+     }
  } else if(hasClass(e.target, 'cancelReply')) {
      e.target.parentElement.innerHTML = '';
      setOnLocalStorage();
